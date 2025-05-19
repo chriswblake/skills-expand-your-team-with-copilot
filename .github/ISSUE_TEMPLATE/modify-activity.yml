@@ -1,0 +1,103 @@
+name: Modify Existing Activity
+description: Request changes to an existing activity
+title: "[MODIFY ACTIVITY]: "
+labels: ["enhancement", "activity"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Modify Activity Request Form
+        Please provide details about the changes you want to make to an existing activity.
+
+  - type: input
+    id: activity_name
+    attributes:
+      label: Activity Name
+      description: The name of the existing activity you want to modify
+      placeholder: "Chess Club"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: What needs to be changed?
+      description: Select all changes that apply
+      multiple: true
+      options:
+        - Activity Description
+        - Schedule (days and times)
+        - Maximum Participants
+        - Category
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description_change
+    attributes:
+      label: New Description
+      description: If updating the description, provide the new text
+      placeholder: "Learn advanced chess strategies and compete in local and regional tournaments"
+    validations:
+      required: false
+
+  - type: input
+    id: schedule_change
+    attributes:
+      label: New Schedule
+      description: If updating the schedule, provide the new days and times
+      placeholder: "Tuesdays and Thursdays, 4:00 PM - 5:30 PM"
+    validations:
+      required: false
+
+  - type: input
+    id: max_participants_change
+    attributes:
+      label: New Maximum Participants
+      description: If updating the maximum number of participants, provide the new number
+      placeholder: "15"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category_change
+    attributes:
+      label: New Category
+      description: If updating the category, select the new one
+      options:
+        - Sports
+        - Arts
+        - Academic
+        - Technology
+        - Community
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: other_changes
+    attributes:
+      label: Other Changes
+      description: Describe any other changes needed
+      placeholder: "We need to add the tournament schedule information to the activity details"
+    validations:
+      required: false
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Changes
+      description: Please explain why these changes are needed
+      placeholder: "We've had increased interest in chess club and need to expand meeting times and capacity"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## What happens next?
+        
+        Our technical team will review this request and update the activity information in the system. You'll be notified when the changes have been implemented.

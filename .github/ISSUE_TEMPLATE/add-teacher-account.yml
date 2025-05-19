@@ -1,0 +1,90 @@
+name: Add New Teacher Account
+description: Request to add a new teacher account to the system
+title: "[NEW TEACHER]: "
+labels: ["account", "teacher"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Teacher Account Request Form
+        Please provide the following information to create a new teacher account in the system.
+        
+        **Note:** This information will be used to create login credentials for the teacher.
+
+  - type: input
+    id: full_name
+    attributes:
+      label: Teacher's Full Name
+      description: The teacher's complete name
+      placeholder: "Jane Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: display_name
+    attributes:
+      label: Display Name
+      description: How the teacher should be displayed in the system (e.g., "Ms. Doe")
+      placeholder: "Ms. Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: username
+    attributes:
+      label: Username
+      description: Suggested username for the teacher account (lowercase, no spaces)
+      placeholder: "jdoe"
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Email Address
+      description: The teacher's email address
+      placeholder: "jane.doe@mergington.edu"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Account Role
+      description: What role should this account have?
+      options:
+        - Teacher (standard permissions)
+        - Admin (advanced permissions)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: notification
+    attributes:
+      label: Account Notification
+      description: Should the teacher be notified when the account is created?
+      options:
+        - Yes, send login details via email
+        - No, I will provide the login details directly
+    validations:
+      required: true
+
+  - type: textarea
+    id: activities
+    attributes:
+      label: Responsible for Activities
+      description: List any specific activities this teacher will be responsible for
+      placeholder: |
+        Chess Club
+        Math Club
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## What happens next?
+        
+        Our technical team will create the new teacher account with the information provided. A temporary password will be generated, and login details will be shared according to your notification preference.
