@@ -1,0 +1,71 @@
+name: Remove Activity
+description: Request to remove an extracurricular activity from the system
+title: "[REMOVE ACTIVITY]: "
+labels: ["removal", "activity"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Remove Activity Request Form
+        Please provide details about the activity you want to remove from the system.
+
+  - type: input
+    id: activity_name
+    attributes:
+      label: Activity Name
+      description: The name of the activity to be removed
+      placeholder: "Chess Club"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason for Removal
+      description: Why does this activity need to be removed?
+      options:
+        - Activity is no longer offered
+        - Activity is being replaced with a different one
+        - Activity is being temporarily suspended
+        - Activity was added by mistake
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_details
+    attributes:
+      label: Additional Details
+      description: Please provide any additional information about this removal
+      placeholder: "The Chess Club is being merged with the Strategy Games Club starting next semester."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: notification
+    attributes:
+      label: Student Notification
+      description: Should currently enrolled students be notified?
+      options:
+        - Yes, notify all currently enrolled students
+        - No, notification is not needed
+    validations:
+      required: true
+
+  - type: textarea
+    id: notification_message
+    attributes:
+      label: Notification Message
+      description: If students should be notified, what message should they receive?
+      placeholder: "Dear students, the Chess Club is being merged with the Strategy Games Club starting next semester. All current Chess Club members are welcome to join the Strategy Games Club."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## What happens next?
+        
+        Our technical team will review this request and remove the activity from the system. If requested, notifications will be sent to currently enrolled students.

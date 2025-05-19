@@ -1,0 +1,79 @@
+name: Add New Activity
+description: Request to add a new extracurricular activity for students
+title: "[NEW ACTIVITY]: "
+labels: ["enhancement", "activity"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add New Activity Request Form
+        Please fill out this form with all the details needed to create a new activity. This will allow our technical team to implement your request quickly without needing additional information.
+
+  - type: input
+    id: activity_name
+    attributes:
+      label: Activity Name
+      description: The name of the new activity (e.g., "Chess Club", "Drama Club")
+      placeholder: "Photography Club"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Activity Description
+      description: Provide a detailed description of the activity
+      placeholder: "Students will learn digital photography skills and techniques, practice with our DSLR cameras, and create a portfolio of their work."
+    validations:
+      required: true
+
+  - type: input
+    id: schedule
+    attributes:
+      label: Activity Schedule
+      description: When does this activity meet? (days and times)
+      placeholder: "Mondays and Wednesdays, 3:30 PM - 5:00 PM"
+    validations:
+      required: true
+
+  - type: input
+    id: max_participants
+    attributes:
+      label: Maximum Participants
+      description: What is the maximum number of students who can join?
+      placeholder: "15"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Activity Category
+      description: What category does this activity fall under?
+      options:
+        - Sports
+        - Arts
+        - Academic
+        - Technology
+        - Community
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Any other details that might be helpful (location, equipment needed, etc.)
+      placeholder: "The activity will take place in Room 203. Students should bring their own cameras if possible, though we have 5 cameras available for students to borrow."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## What happens next?
+        
+        Our technical team will review this request and add the new activity to the system. You'll be notified when the activity is available for student registration.
